@@ -5,6 +5,8 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 
+//TODO: uml
+
 /**
  * Drawer test.
  * 
