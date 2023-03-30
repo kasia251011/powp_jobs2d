@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jobs2d" />
+        <module name="powp_jobs2d" />
       </profile>
     </annotationProcessing>
   </component>
