@@ -11,6 +11,7 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.command.DriverCommand;
+import edu.kis.powp.jobs2d.command.Job2dDriverToDriverCommandAdapter;
 import edu.kis.powp.jobs2d.command.PrimitivesCommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
@@ -19,6 +20,7 @@ import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -59,6 +61,20 @@ public class TestJobs2dPatterns {
 				pos += 10;
 				cmd.execute(driverManager.getCurrentDriver());
 			}
+		});
+
+		application.addTest("DriverCommand: Joe 1", e -> {
+			Job2dDriverToDriverCommandAdapter adapter = new Job2dDriverToDriverCommandAdapter();
+
+			FiguresJoe.figureScript1(adapter);
+			adapter.getCommand().execute(driverManager.getCurrentDriver());
+		});
+
+		application.addTest("DriverCommand: Joe 2", e -> {
+			Job2dDriverToDriverCommandAdapter adapter = new Job2dDriverToDriverCommandAdapter();
+
+			FiguresJoe.figureScript2(adapter);
+			adapter.getCommand().execute(driverManager.getCurrentDriver());
 		});
 	}
 
