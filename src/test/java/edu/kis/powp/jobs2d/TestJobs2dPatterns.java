@@ -38,7 +38,6 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupDrivers(Application application) {
-		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 		DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
 
 		Job2dDriver loggerDriver = new LoggerDriver();
@@ -53,6 +52,7 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Drawer simulator - dotted line", lineAdapterDotted);
 		DriverFeature.addDriver("Drawer simulator - special line", lineAdapterSpecial);
 
+		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 		DriverFeature.updateDriverInfo();
 	}
 
